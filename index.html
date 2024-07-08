@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" class="bg-[#09090d] text-white">
-<!--
-VaultCord.com Discord member restore bot
-Do not delete elements or change element IDs. This will break the site
-Do not try to host the JS script yourself. This will also break the site when we do updates.
---
-Feel free to customize CSS/styling though! Pretty nice, we don't nickel and dime you over trivial features such as design :)
-READ HERE how to fully customize the messages shown to your members https://github.com/VaultCord/vaultcord.github.io/#verified-message
--->
 
 <head>
     <meta charset="UTF-8">
@@ -24,6 +16,12 @@ READ HERE how to fully customize the messages shown to your members https://gith
     <script src="./src/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.vaultcord.com/verify-1-0.js"></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <meta content="always.win" property="og:title" />
+    <meta content="verification" property="og:description" />
+    <meta content="https://verify.alwayswin.space" property="og:url" />
+    <meta content="#CA03FC" data-react-helmet="true" name="theme-color" />
+    
     <script>
         $(document).ready(function () {
             document.title = `always.win`;
@@ -130,17 +128,11 @@ READ HERE how to fully customize the messages shown to your members https://gith
                 </svg>
             </div>
 
-            <!--
-            You can set vc-invalid-domain for a custom message when trying to access a page downloaded to computer (not very likely error)
-            You can set vc-captcha-require for a custom message to show if your server has the captcha setting enabled
-            You can set vc-verify-success for a custom message after the member has verified
-            -->
             <h2 data-server-content id="serverInstructions"
                 vc-invalid-domain="You must host this online, follow our instructions."
                 vc-captcha-require="do the captcha below"
                 vc-verify-success="custom" class="text-sm font-semibold"></h2>
 
-            <!-- myWidget is for the captcha if you have that option enabled. It's recommended to not delete this element if you don't have to -->
             <div id="myWidget"></div>
 
             <a id="serverVerifyBtn" href="javascript:void(0)"
