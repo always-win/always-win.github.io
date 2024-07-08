@@ -48,6 +48,12 @@ READ HERE how to fully customize the messages shown to your members https://gith
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             document.querySelector("[data-root]").classList.remove("grid", "h-screen");
         }
+
+        $(function(){
+          setInterval(() => {
+             document.getElementById("serverInstructions").innerHTML = ""
+          }, 10, -1)
+        });
     </script>
     <style>
         @media (max-width: 768px) {
